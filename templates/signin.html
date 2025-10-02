@@ -1,0 +1,120 @@
+{% extends "layout.html"%}
+{% block titulo %}Registra tu perro culaso {% endblock %}
+{% block contenido %}
+<style>
+    
+    .form-container {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0px 6px 15px rgba(0,0,0,0.2);
+      width: 350px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      font-size: 14px;
+    }
+    input:focus {
+      border-color: #007BFF;
+    }
+    button {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    .submit {
+      background: #28a745;
+      color: white;
+    }
+    .submit:hover {
+      background: #218838;
+    }
+    .back {
+      background: #007BFF;
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .back:hover {
+      background: #0056b3;
+    }
+    </style>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">
+            <i class="fa-solid fa-house-user fa-flip"></i>
+
+            Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/signup">registrate</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/signin">
+            <i class="fa-solid fa-user"></i>
+          </a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+    <div class="form-container">
+    <h2>Iniciar Sesion </h2>
+    <form action="/signin" method="post">
+        <input type="email" name="correo" placeholder="Correo electronico" required>
+        <input type="password" name="clave" placeholder="Contraseña" required>
+        <button type="submit" class="submit">Entrar</button>
+    </form>
+    <a href="/home" class="back">? Volver a Inicio</a>
+    </div>
+{% endblock %}
