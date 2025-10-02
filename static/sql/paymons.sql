@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `dogfood`
+-- Base de datos: `paymons`
 --
 
 -- --------------------------------------------------------
@@ -40,7 +40,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `nombre`, `correo`, `clave`, `perfil`) VALUES
-(1, 'ELIAS BECERRA CAMPOS', 'elias.becerra1030@alumnos.udg.mx', 'scrypt:32768:8:1$DoACJjbBv1fyHnuW$76bfd3a1fd788293d48ad05525ec03c0fa53e5884530587106f58d82c2e3dae4d67607047397e7ebbd55e3084b6113f9c882911a99e406f5176cf23cd5459d66', 'U');
+(1, 'Diego Vazquez', 'diego.vazquez2747@alumnos.udg.mx', 'scrypt:32768:8:1$DoACJjbBv1fyHnuW$76bfd3a1fd788293d48ad05525ec03c0fa53e5884530587106f58d82c2e3dae4d67607047397e7ebbd55e3084b6113f9c882911a99e406f5176cf23cd5459d66', 'U');
 
 --
 -- Índices para tablas volcadas

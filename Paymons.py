@@ -6,19 +6,19 @@ from models.entities.User import User
 from models.ModelUser import ModelUser
 from flask_login import LoginManager, login_user, logout_user, login_required
 
-dogfoodApp = Flask(__name__)
-db         = MySQL(dogfoodApp)
-signinManager = LoginManager(dogfoodApp)
+paymonsApp = Flask(__name__)
+db         = MySQL(paymonsApp)
+signinManager = LoginManager(paymonsApp)
 
 @signinManager.user_loader
 def load_user(id):
     return ModelUser.get_by_id(db,id)
 
-@dogfoodApp.route('/')
+@paymonsApp.route('/')
 def home():
     return render_template('home.html')
 
-@dogfoodApp.route('/signup', methods=['GET','POST'])
+@paymonsApp.route('/signup', methods=['GET','POST'])
 def signup():
     if request.method == 'POST':
         nombre = request.form['nombre']
@@ -32,7 +32,7 @@ def signup():
     else:
         return render_template('signup.html')
 
-@dogfoodApp.route('/signin',methods=['GET','POST'])
+@paymonsApp.route('/signin',methods=['GET','POST'])
 def signin():
     if request.method == 'POST':
         usuario = User(0,None,request.form['correo'],request.form['clave'],None)
@@ -54,5 +54,5 @@ def signin():
 
 
 if __name__ == '__main__':
-    dogfoodApp.config.from_object(config['development'])
-    dogfoodApp.run(port=4000)
+    paymonsApp.config.from_object(config['development'])
+    paymonsApp.run(port=4000)
